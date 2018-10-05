@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs'); // handlebars
 const fs = require('fs');
 
+const port = process.env.PORT || 3000; // for heroku
 var app = express();
 
 // partials 
@@ -59,4 +60,6 @@ app.get('/bad', (req, res) => {
 });
 
 // listen to porn no. 3000
-app.listen(3000);
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
+});
